@@ -11,24 +11,63 @@
       <h2 style="margin-top: 0px;">ruru</h2>
 
       <!-- 自己紹介文 -->
-      <p>
-        色々やってる人です。
-      </p>
+      <p>MMORPGとかが好きな人です。</p>
+      <p>プログラミングはちょっとできます。</p>
 
       <!-- ソーシャルリンク -->
       <div class="social-links">
-        <a href="https://twitter.com/example" target="_blank" rel="noopener noreferrer">Twitter</a>
-        <v-icon color="info" icon="mdi-github"><a href="https://github.com/example" target="_blank" rel="noopener noreferrer">GitHub</a></v-icon>
+        <div class="social-link">
+          <v-icon  icon="mdi-account-box"></v-icon>
+          <a class="link" href="https://mi.ruruke.moe/@ruru" target="_blank" rel="noopener noreferrer">Misskey<v-icon class="link-icon" icon="mdi mdi-open-in-new"></v-icon></a>
+        </div>
+        <div class="social-link">
+          <v-icon  icon="mdi-github"></v-icon>
+          <a class="link" href="https://github.com/ruruke" target="_blank" rel="noopener noreferrer">GitHub<v-icon class="link-icon" icon="mdi mdi-open-in-new"></v-icon></a>
+        </div>
       </div>
     </div>
   </div>
 </template>
 
 <style scoped>
+
 .profile-image{
   width: 150px;
   height: 150px;
   border-radius: 50%;
   object-fit: cover;
+  margin: 5em 0;
+  user-select: none;
+}
+.social-links {
+  margin-top: 2em;
+}
+/* 通常（未訪問）リンク */
+.social-links a {
+  color: #333333; /* 濃いグレー */
+  text-decoration: none; /* 下線なし */
+}
+
+/* ホバー時（hover）のリンク */
+.social-links a:hover {
+  text-decoration: underline; /* ホバーで下線をつける */
+  color: #000000; /* ホバー時に黒でより目立たせる */
+}
+
+.link {
+  padding-left: 6px;
+}
+
+link-icon  {
+  font-size: 13px;
+  padding-bottom: 7px;
+}
+.social-link {
+  padding-top: 5px;
+}
+
+/* 訪問済みリンク（visited） */
+.social-links a:visited {
+  color: #555555; /* 通常色より少し明るい灰色 */
 }
 </style>

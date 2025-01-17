@@ -1,5 +1,6 @@
 <template>
   <footer class="footer">
+<!--    <p>© 2025 syuilo and Misskey Project, "Misskey Mark"はSyuilo氏及びMisskey Projectの所有物です。</p>-->
     <p>© {{ currentYear }} ruru. All rights reserved.</p>
   </footer>
 </template>

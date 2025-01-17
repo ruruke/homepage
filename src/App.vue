@@ -28,6 +28,7 @@ import Footer from "./components/Footer.vue";
 .content {
   flex: 1; /* 余ったスペースを埋める */
   display: flex; /* フレックスレイアウトで調整可能 */
+  padding-top: 4em;
   flex-direction: column;
 }
 
