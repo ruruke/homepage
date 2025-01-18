@@ -44,16 +44,25 @@
 }
 /* 通常（未訪問）リンク */
 .social-links a {
-  color: #333333; /* 濃いグレー */
+  color: #ff99aa; /* ピンク基調 */
   text-decoration: none; /* 下線なし */
 }
 
 /* ホバー時（hover）のリンク */
 .social-links a:hover {
   text-decoration: underline; /* ホバーで下線をつける */
-  color: #000000; /* ホバー時に黒でより目立たせる */
+  color: #cc7788; /* ピンクを基準に少し濃いめ */
 }
 
+/* 訪問済みリンク（visited） */
+.social-links a:visited {
+  color: #dd8899; /* ベースより落ち着いた色 */
+}
+
+/* アクティブな状態（クリック中など） */
+.social-links a:active {
+  color: #aa5566; /* より濃い色を使用 */
+}
 .link {
   padding-left: 6px;
 }
@@ -64,10 +73,5 @@ link-icon  {
 }
 .social-link {
   padding-top: 5px;
-}
-
-/* 訪問済みリンク（visited） */
-.social-links a:visited {
-  color: #555555; /* 通常色より少し明るい灰色 */
 }
 </style>
