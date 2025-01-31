@@ -8,7 +8,8 @@
     <div class="profile-card">
       <!-- プロフィール画像 -->
       <img src="https://storage.ruruke.moe/misskey/file/original/c67846dd-ff11-4a5b-90f8-c32b42437f3c.png" alt="プロフィール画像" class="profile-image" />
-      <h2 style="margin-top: 0px;">ruru</h2>
+      <h2 style="margin-top: 0px; font-size: 2.2em;">Ryuuto Yoshimura</h2>
+      <h2 style="margin-top: 0px; padding-bottom: 1em; font-size: 1.3em;">(alias. ruru)</h2>
 
       <!-- 自己紹介文 -->
       <p>MMORPGとかが好きな人です。</p>
