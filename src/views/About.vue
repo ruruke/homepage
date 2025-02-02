@@ -1,29 +1,43 @@
 <script setup lang="ts">
-
 </script>
 
 <template>
-  <div class="profile">
+  <div class="profile-container">
     <h1>お菓子食べませんか？</h1>
     <div class="profile-card">
-      <!-- プロフィール画像 -->
-      <img src="https://storage.ruruke.moe/misskey/file/original/c67846dd-ff11-4a5b-90f8-c32b42437f3c.png" alt="プロフィール画像" class="profile-image" />
-      <h2 style="margin-top: 0px; font-size: 2.2em;">Ryuuto Yoshimura</h2>
-      <h2 style="margin-top: 0px; padding-bottom: 1em; font-size: 1.3em;">(alias. ruru)</h2>
-
-      <!-- 自己紹介文 -->
+      <img
+          src="https://storage.ruruke.moe/misskey/file/original/c67846dd-ff11-4a5b-90f8-c32b42437f3c.png"
+          alt="プロフィール画像"
+          class="profile-image"
+      />
+      <h2 class="profile-title">Ryuuto Yoshimura</h2>
+      <h2 class="profile-subtitle">(alias. ruru)</h2>
       <p>MMORPGとかが好きな人です。</p>
       <p>プログラミングはちょっとできます。</p>
-
-      <!-- ソーシャルリンク -->
       <div class="social-links">
         <div class="social-link">
-          <v-icon  icon="mdi-account-box"></v-icon>
-          <a class="link" href="https://mi.ruruke.moe/@ruru" target="_blank" rel="noopener noreferrer">Misskey<v-icon class="link-icon" icon="mdi mdi-open-in-new"></v-icon></a>
+          <v-icon icon="mdi-account-box"></v-icon>
+          <a
+              class="link"
+              href="https://mi.ruruke.moe/@ruru"
+              target="_blank"
+              rel="noopener noreferrer"
+          >
+            Misskey
+            <v-icon class="link-icon" icon="mdi mdi-open-in-new"></v-icon>
+          </a>
         </div>
         <div class="social-link">
-          <v-icon  icon="mdi-github"></v-icon>
-          <a class="link" href="https://github.com/ruruke" target="_blank" rel="noopener noreferrer">GitHub<v-icon class="link-icon" icon="mdi mdi-open-in-new"></v-icon></a>
+          <v-icon icon="mdi-github"></v-icon>
+          <a
+              class="link"
+              href="https://github.com/ruruke"
+              target="_blank"
+              rel="noopener noreferrer"
+          >
+            GitHub
+            <v-icon class="link-icon" icon="mdi mdi-open-in-new"></v-icon>
+          </a>
         </div>
       </div>
     </div>
@@ -31,8 +45,15 @@
 </template>
 
 <style scoped>
+.profile-container {
+  /* Renamed from .profile for clarity */
+}
 
-.profile-image{
+.profile-card {
+  /* Existing or additional styles can remain here */
+}
+
+.profile-image {
   width: 150px;
   height: 150px;
   border-radius: 50%;
@@ -40,38 +61,49 @@
   margin: 5em 0;
   user-select: none;
 }
+
+.profile-title {
+  margin-top: 0;
+  font-size: 2.2em;
+}
+
+.profile-subtitle {
+  margin-top: 0;
+  padding-bottom: 1em;
+  font-size: 1.3em;
+}
+
 .social-links {
   margin-top: 2em;
 }
-/* 通常（未訪問）リンク */
+
 .social-links a {
-  color: #ff99aa; /* ピンク基調 */
-  text-decoration: none; /* 下線なし */
+  color: #ff99aa;
+  text-decoration: none;
 }
 
-/* ホバー時（hover）のリンク */
 .social-links a:hover {
-  text-decoration: underline; /* ホバーで下線をつける */
-  color: #cc7788; /* ピンクを基準に少し濃いめ */
+  text-decoration: underline;
+  color: #cc7788;
 }
 
-/* 訪問済みリンク（visited） */
 .social-links a:visited {
-  color: #dd8899; /* ベースより落ち着いた色 */
+  color: #dd8899;
 }
 
-/* アクティブな状態（クリック中など） */
 .social-links a:active {
-  color: #aa5566; /* より濃い色を使用 */
+  color: #aa5566;
 }
+
 .link {
   padding-left: 6px;
 }
 
-link-icon  {
+link-icon {
   font-size: 13px;
   padding-bottom: 7px;
 }
+
 .social-link {
   padding-top: 5px;
 }

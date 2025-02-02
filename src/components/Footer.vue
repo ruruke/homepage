@@ -1,16 +1,20 @@
 <template>
   <footer class="footer">
-<!--    <p>© 2025 syuilo and Misskey Project, "Misskey Mark"はSyuilo氏及びMisskey Projectの所有物です。</p>-->
-    <p>© {{ currentYear }} ruru. All rights reserved.</p>
+    <p>© {{ CURRENT_YEAR }} ruru. All rights reserved.</p>
   </footer>
 </template>
 
 <script setup lang="ts">
-const currentYear: number = new Date().getFullYear(); // 現在の年を取得
+// Extract function to improve readability
+function getCurrentYear(): number {
+  return new Date().getFullYear();
+}
+
+// Renamed variable to emphasize its constant nature
+const CURRENT_YEAR = getCurrentYear();
 </script>
 
 <style scoped>
-/* フッター */
 .footer {
   text-align: center;
   padding: 10px 0;
