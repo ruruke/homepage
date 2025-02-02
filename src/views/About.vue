@@ -2,13 +2,13 @@
 </script>
 
 <template>
-  <div class="profile-container">
+  <div class="fade-in">
     <h1>お菓子食べませんか？</h1>
     <div class="profile-card">
       <img
           src="https://storage.ruruke.moe/misskey/file/original/c67846dd-ff11-4a5b-90f8-c32b42437f3c.png"
           alt="プロフィール画像"
-          class="profile-image"
+          class="profile-image drop-down"
       />
       <h2 class="profile-title">Ryuuto Yoshimura</h2>
       <h2 class="profile-subtitle">(alias. ruru)</h2>
@@ -52,7 +52,30 @@
 .profile-card {
   /* Existing or additional styles can remain here */
 }
+/* フェードインアニメーション用クラス */
+.fade-in {
+  opacity: 0.1; /* アニメーション開始時は透明 */
+  animation: fadeInEffect .7s ease-in-out forwards; /* 1.5秒かけて徐々に表示 */
+}
 
+@keyframes fadeInEffect {
+  to {
+    opacity: 1;
+  }
+}
+/* 落ちてくるアニメーションを追加 */
+.drop-down {
+  opacity: 0;
+  transform: translateY(-50px); /* 少し上から */
+  animation: dropDownEffect 1.5s ease forwards;
+}
+
+@keyframes dropDownEffect {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
 .profile-image {
   width: 150px;
   height: 150px;
