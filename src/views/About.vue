@@ -122,7 +122,7 @@
   padding-left: 6px;
 }
 
-link-icon {
+.link-icon {
   font-size: 13px;
   padding-bottom: 7px;
 }
