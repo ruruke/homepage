@@ -1,61 +1,80 @@
 <script setup lang="ts">
+// Social media links
+interface SocialLink {
+  icon: string;
+  name: string;
+  url: string;
+}
+
+const socialLinks: SocialLink[] = [
+  {
+    icon: 'mdi-account-box',
+    name: 'Misskey',
+    url: 'https://mi.ruruke.moe/@ruru'
+  },
+  {
+    icon: 'mdi-github',
+    name: 'GitHub',
+    url: 'https://github.com/ruruke'
+  }
+];
 </script>
 
 <template>
-  <div class="fade-in">
-    <h1>お菓子食べませんか？</h1>
-    <div class="profile-card">
-      <img
+  <v-card
+    class="mx-auto my-8 profile-card fade-in"
+    max-width="800"
+    elevation="3"
+    rounded="lg"
+  >
+    <v-card-title class="text-h3 text-center pt-6">
+      お菓子食べませんか？
+    </v-card-title>
+
+    <v-card-text class="text-center">
+      <v-avatar
+        size="150"
+        class="my-6 drop-down"
+      >
+        <v-img
           src="https://storage.ruruke.moe/misskey/file/original/c67846dd-ff11-4a5b-90f8-c32b42437f3c.png"
           alt="プロフィール画像"
-          class="profile-image drop-down"
-      />
-      <h2 class="profile-title">Ryuuto Yoshimura</h2>
-      <h2 class="profile-subtitle">(alias. ruru)</h2>
-      <p>MMORPGとかが好きな人です。</p>
-      <p>プログラミングはちょっとできます。</p>
+        />
+      </v-avatar>
+
+      <h2 class="text-h4 mb-1">Ryuuto Yoshimura</h2>
+      <h3 class="text-h5 mb-6">(alias. ruru)</h3>
+
+      <p class="text-body-1">MMORPGとかが好きな人です。</p>
+      <p class="text-body-1 mb-6">プログラミングはちょっとできます。</p>
+
+      <v-divider class="mb-4" />
+
       <div class="social-links">
-        <div class="social-link">
-          <v-icon icon="mdi-account-box"></v-icon>
-          <a
-              class="link"
-              href="https://mi.ruruke.moe/@ruru"
-              target="_blank"
-              rel="noopener noreferrer"
-          >
-            Misskey
-            <v-icon class="link-icon" icon="mdi mdi-open-in-new"></v-icon>
-          </a>
-        </div>
-        <div class="social-link">
-          <v-icon icon="mdi-github"></v-icon>
-          <a
-              class="link"
-              href="https://github.com/ruruke"
-              target="_blank"
-              rel="noopener noreferrer"
-          >
-            GitHub
-            <v-icon class="link-icon" icon="mdi mdi-open-in-new"></v-icon>
-          </a>
-        </div>
+        <v-btn
+          v-for="link in socialLinks"
+          :key="link.name"
+          :href="link.url"
+          target="_blank"
+          rel="noopener noreferrer"
+          variant="text"
+          color="pink-lighten-3"
+          class="mx-2"
+          :prepend-icon="link.icon"
+        >
+          {{ link.name }}
+          <v-icon end size="small">mdi-open-in-new</v-icon>
+        </v-btn>
       </div>
-    </div>
-  </div>
+    </v-card-text>
+  </v-card>
 </template>
 
 <style scoped>
-.profile-container {
-  /* Renamed from .profile for clarity */
-}
-
-.profile-card {
-  /* Existing or additional styles can remain here */
-}
 /* フェードインアニメーション用クラス */
 .fade-in {
-  opacity: 0.1; /* アニメーション開始時は透明 */
-  animation: fadeInEffect .7s ease-in-out forwards; /* 1.5秒かけて徐々に表示 */
+  opacity: 0.1;
+  animation: fadeInEffect 0.7s ease-in-out forwards;
 }
 
 @keyframes fadeInEffect {
@@ -63,10 +82,11 @@
     opacity: 1;
   }
 }
+
 /* 落ちてくるアニメーションを追加 */
 .drop-down {
   opacity: 0;
-  transform: translateY(-50px); /* 少し上から */
+  transform: translateY(-50px);
   animation: dropDownEffect 1.5s ease forwards;
 }
 
@@ -76,58 +96,15 @@
     transform: translateY(0);
   }
 }
-.profile-image {
-  width: 150px;
-  height: 150px;
-  border-radius: 50%;
-  object-fit: cover;
-  margin: 5em 0;
-  user-select: none;
-}
 
-.profile-title {
-  margin-top: 0;
-  font-size: 2.2em;
-}
-
-.profile-subtitle {
-  margin-top: 0;
-  padding-bottom: 1em;
-  font-size: 1.3em;
+.profile-card {
+  background-color: rgba(255, 255, 255, 0.8) !important;
+  backdrop-filter: blur(10px);
 }
 
 .social-links {
-  margin-top: 2em;
-}
-
-.social-links a {
-  color: #ff99aa;
-  text-decoration: none;
-}
-
-.social-links a:hover {
-  text-decoration: underline;
-  color: #cc7788;
-}
-
-.social-links a:visited {
-  color: #dd8899;
-}
-
-.social-links a:active {
-  color: #aa5566;
-}
-
-.link {
-  padding-left: 6px;
-}
-
-.link-icon {
-  font-size: 13px;
-  padding-bottom: 7px;
-}
-
-.social-link {
-  padding-top: 5px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
 }
 </style>

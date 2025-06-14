@@ -1,45 +1,39 @@
 <script setup lang="ts">
+import { useRouter } from 'vue-router';
 
+const router = useRouter();
+const routes = router.getRoutes();
+// Get all routes that should be shown in navigation
+const navItems = routes.filter(route => route.name && route.meta.hideInNav !== true);
 </script>
 
 <template>
-  <header>
-    <nav>
-      <ul>
-        <li><a href="/">Home</a></li>
-<!--        <li><a href="/contact">Contact</a></li>-->
-      </ul>
-    </nav>
-  </header>
+  <v-app-bar
+    app
+    flat
+    color="rgba(105, 105, 105, 0.5)"
+    class="px-3"
+    elevation="1"
+  >
+    <v-app-bar-title>お菓子食べませんか？</v-app-bar-title>
+
+    <v-spacer />
+
+    <v-btn
+      v-for="item in navItems"
+      :key="item.path"
+      :to="item.path"
+      variant="text"
+      rounded="lg"
+      class="mx-1"
+    >
+      {{ item.name }}
+    </v-btn>
+  </v-app-bar>
 </template>
 
 <style scoped>
-header {
-  border-bottom: 2px solid #666;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  background-color: rgba(105, 105, 105, 0.5); /* 半透明の背景を追加 */
-  backdrop-filter: blur(5px); /* 背景をぼかす */
-  z-index: 100;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-nav ul {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-
-nav li {
-  display: inline;
-  margin: 0 10px; /* 左右にマージンを追加 */
-}
-
-nav a {
-  text-decoration: none;
-  color: #333;
+.v-app-bar {
+  backdrop-filter: blur(5px);
 }
 </style>
